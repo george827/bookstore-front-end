@@ -1,38 +1,38 @@
 import React, { useEffect, useState } from 'react';
-const [books, setBooks] = useState([]);
+// const [books, setBooks] = useState([]);
 
 const Books = () => {
-    const getBooks = () => {
-        fetch('http://127.0.0.1:3000/api/v1/books', {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    const error = new Error(response.status);
-                    throw error;
-                } else {
-                    return response.json();
-                }
-            })
-            .then((data) => {
-                console.log(data);
-                setBooks(data);
-            })
-            .catch((error) => {
-                throw new Error(error);
-            });
-    }
+    // const getBooks = () => {
+    //     fetch('http://127.0.0.1:3000/api/v1/books', {
+    //         method: 'GET',
+    //         headers: { 'Content-Type': 'application/json' },
+    //     })
+    //         .then((response) => {
+    //             if (!response.ok) {
+    //                 const error = new Error(response.status);
+    //                 throw error;
+    //             } else {
+    //                 return response.json();
+    //             }
+    //         })
+    //         .then((data) => {
+    //             console.log(data);
+    //             setBooks(data);
+    //         })
+    //         .catch((error) => {
+    //             throw new Error(error);
+    //         });
+    // }
 
-    useEffect(() => {
-        getBooks();
-    }, []);
+    // useEffect(() => {
+    //     getBooks();
+    // }, []);
 
 
     return (
         <>
         <p>My Books</p>
-        <ul>
+        {/* <ul>
             {books.map((book) => (
                 <>
                 <li key={book.id}>{book.title}</li>
@@ -43,9 +43,8 @@ const Books = () => {
                 <li key={book.id}>{book.quantity}</li>
                 </>
             ))}
-        </ul>
+        </ul> */}
 
-        {/* <p><Link to="/Addbook">Add A book</Link></p> */}
         </>
     )
 }
